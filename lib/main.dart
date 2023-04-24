@@ -1,42 +1,27 @@
 import 'package:flutter/material.dart';
+import 'page_one.dart';
+import 'page_two.dart';
+import 'page_three.dart';
+import 'page_four.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
-  }
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: 'Rutas Nombradas',
+    theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+      color: Color(0xff39b1ff),
+    )),
+    // Inicie la aplicación con la ruta con nombre. En nuestro caso, la aplicación comenzará
+    // en el Widget FirstScreen
+    initialRoute: '/',
+    routes: {
+      // Cuando naveguemos hacia la ruta "/", crearemos el Widget FirstScreen
+      '/': (context) => FirstScreen(),
+      // Cuando naveguemos hacia la ruta "/second", crearemos el Widget SecondScreen
+      '/Segunda': (context) => SecondScreen(),
+      '/Tercera': (context) => ThirdScreen(),
+      '/Cuarta': (context) => FourScreen(),
+    },
+  ));
 }
