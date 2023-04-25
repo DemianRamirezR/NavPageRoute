@@ -78,31 +78,6 @@ class FourScreen extends StatelessWidget {
                 },
               ),
             ),
-            Center(
-              child: ElevatedButton(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Icon(Icons.home),
-                    SizedBox(width: 10),
-                    Text('Inicio'),
-                  ],
-                ),
-                style: ElevatedButton.styleFrom(
-                  onPrimary: Colors.white,
-                  primary: Color(0xff39b1ff),
-                  onSurface: Colors.grey,
-                  elevation: 20,
-                  minimumSize: Size(150, 60),
-                  shadowColor: Colors.teal,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30)),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/');
-                },
-              ),
-            ),
           ],
         ),
       ),
